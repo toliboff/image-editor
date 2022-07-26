@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Image Editor</title>
+</head>
+<body>
+  <div class="container" id="root">
+    <header>
+      <h1> Image Editor</h1>
+     
+    </header>
+
+    <main>
+      <div class="panel">
+        <div class="filters">
+          <h2>Filters</h2>
+        </div>
+
+        <div class="range">
+          <div class="range-details">
+            <h3>Saturation</h3>
+            <span>
+              100%
+            </span>
+          </div>
+        </div>
+
+        <div class="rotation">
+          <h2>Rotate & Flip</h2>
+          <div class="rotate-buttons">
+            <button>Left</button>
+            <button>Right</button>
+            <button>Flip H</button>
+            <button>Flip V</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="image-container">
+        <img src="" alt="" id="img">
+      </div>
+    </main>
+    <footer>
+      <button>RESET FILTERS</button>
+      <button>CHOOSE IMAGE</button>
+      <button>SAVE IMAGE</button>
+    </footer>
+  </div>
+  <script src="script.js">
+  </script>
+</body>
+</html>
