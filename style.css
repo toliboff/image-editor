@@ -49,6 +49,11 @@ body {
   width: 100%;
 }
 
+
+.rotation{
+  margin-top: ;
+}
+
 .image-container{
   margin-left: 1rem;
   flex-grow: 1;
@@ -85,4 +90,21 @@ button{
 .active-btn{
   background-color: rgb(7, 119, 211);
   color: #fff;
+}
+
+.rotation{
+  margin-top: 1rem;
+}
+
+.rotate-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.rotate-buttons button{
+  background-color: #fff;
+  color:rgb(128, 126, 126);
+  border: 1px solid #ccc;
+  margin: 0.2rem;
 }
