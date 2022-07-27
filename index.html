@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,900;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Image Editor</title>
 </head>
@@ -15,22 +17,26 @@
      
     </header>
 
-    <main>
+    <main class="main">
       <div class="panel">
-        <div class="filters">
+        <div class="filters" >
           <h2>Filters</h2>
           <div class="filter-buttons">
-            
+            <button name="brightness" class="active-btn">Brightness</button>
+            <button name="saturation">Saturation</button>
+            <button name="inversion">Inversion</button>
+            <button name="grayscale">Grayscale</button>
           </div>
         </div>
 
         <div class="range">
           <div class="range-details">
-            <h3>Saturation</h3>
-            <span>
+            <h3 class="filter-name" id="filter-name">Saturation</h3>
+            <span id="range-value">
               100%
             </span>
           </div>
+          <input type="range" class="range" id="range">
         </div>
 
         <div class="rotation">
@@ -45,13 +51,14 @@
 
       </div>
       <div class="image-container">
-        <img src="./image-placeholder.svg" alt="" id="img">
+        <img src="./image-placeholder.svg" alt="" id="img" class="image">
       </div>
     </main>
-    <footer>
-      <button>RESET FILTERS</button>
-      <button>CHOOSE IMAGE</button>
-      <button>SAVE IMAGE</button>
+    <footer class="footer">
+      <button id="reset-button">RESET FILTERS</button>
+      <button id="file-btn">CHOOSE IMAGE</button>
+      <input type="file" id="file" accept="image/*" class="file">
+      <button class="active-btn">SAVE IMAGE</button>
     </footer>
   </div>
   <script src="script.js">
