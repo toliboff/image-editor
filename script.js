@@ -6,9 +6,10 @@ const range = document.querySelector("#range");
 const rangeValue = document.querySelector("#range-value");
 const resetButton = document.querySelector("#reset-button");
 
+const rotate = 0;
 const filters = {
-  brightness:50, 
-  saturation:50,
+  brightness:100, 
+  saturation:100,
   inversion:0,
   grayscale:0
 };
@@ -34,22 +35,42 @@ filterButtons.forEach(button=>{
 });
 
 range.addEventListener('change', (e)=>{
-  const activeButton = document.querySelector('.filters .active-btn').name
+  const activeButton = document.querySelector('.filters .active-btn').name;
+  if(activeButton=='brightness' || activeButton=='saturation'){
+    range.max = 200
+  }
+  else {
+    range.max = 100
+  }
   filters[activeButton] = e.target.value;
   rangeValue.textContent = filters[activeButton]+'%';
+  image.style.filter = `brightness(${filters.brightness}%)  saturate(${filters.saturation}%) invert(${filters.inversion}%) grayscale(${filters.grayscale}%)`;
 });
 
 resetButton.addEventListener('click', ()=>{
-  filters.brightness=50; 
-  filters.saturation=50;
+  filters.brightness=100; 
+  filters.saturation=100;
   filters.inversion=0;
   filters.grayscale=0;
+  image.style.transform = 'rotate(0deg)';
   document.querySelector('[name="brightness"]').click()
+  image.style.filter = `brightness(${filters.brightness}%)  saturate(${filters.saturation}%) invert(${filters.inversion}%) grayscale(${filters.grayscale}%)`;
 });
 
 const rotationButtons = document.querySelectorAll('.rotate-buttons button');
 rotationButtons.forEach(button=>{
     button.addEventListener('click', (e)=>{
-    console.log(e.target.name)
+      if(e.target.name=='left'){
+          rotate-=90
+         image.style.transform = `rotate(${rotate}deg)`;
+      }else if(e.target.name=='right'){
+        image.style.transform = 'rotate(90deg)';
+      } else if(e.target.name=='up'){
+        image.style.transform = 'scaleY(-1)';
+      }else {
+        image.style.transform = 'scaleX(-1)';
+      }
+   
+    console.log('Left');
   })
 });
