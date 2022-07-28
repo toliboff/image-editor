@@ -18,7 +18,7 @@
     </header>
 
     <main class="main">
-      <div class="panel disable" >
+      <div class="panel disabled" id="panel" >
         <div class="filters" >
           <h2>Filters</h2>
           <div class="filter-buttons">
@@ -44,8 +44,8 @@
           <div class="rotate-buttons">
             <button name="left">Left</button>
             <button name="right">Right</button>
-            <button name="up">Flip H</button>
-            <button name="down">Flip V</button>
+            <button name="up">Flip V</button>
+            <button name="down">Flip H</button>
           </div>
         </div>
 
@@ -60,6 +60,7 @@
       <input type="file" id="file" accept="image/*" class="file">
       <button class="active-btn">SAVE IMAGE</button>
     </footer>
+    <canvas id="canvas" width="200" height="100"></canvas>
   </div>
   <script src="script.js">
   </script>
